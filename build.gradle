@@ -1,0 +1,69 @@
+plugins {
+    id 'java'
+}
+
+group 'mars'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    camelVersion = "2.24.2"
+    activemqVersion = '5.7.0'
+    springVersion = '2.1.9.RELEASE'
+    //oracleVersion = '11.2.0.1'
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+    //compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12
+    //compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.25'
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-jdk14
+    //testCompile group: 'org.slf4j', name: 'slf4j-jdk14', version: '1.7.25'
+
+    // https://mvnrepository.com/artifact/com.h2database/h2
+    compile group: 'com.h2database', name: 'h2', version: '1.4.197'
+
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot
+    compile group: 'org.springframework.boot', name: 'spring-boot', version: springVersion
+    // https://mvnrepository.com/artifact/org.springframework/spring-core
+    compile group: 'org.springframework', name: 'spring-core', version: springVersion
+    // https://mvnrepository.com/artifact/org.springframework/spring-context
+    compile group: 'org.springframework', name: 'spring-context', version: springVersion
+    // https://mvnrepository.com/artifact/org.springframework/spring-test
+    testCompile group: 'org.springframework', name: 'spring-test', version: springVersion
+    //compile("org.springframework:spring-context:4.3.5.RELEASE")
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-activemq
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-activemq', version: springVersion
+
+    // https://mvnrepository.com/artifact/org.apache.activemq/activemq-core
+    compile group: 'org.apache.activemq', name: 'activemq-core', version: activemqVersion
+    // https://mvnrepository.com/artifact/org.apache.activemq/activemq-camel
+    //compile group: 'org.apache.activemq', name: 'activemq-camel', version: '5.15.6'
+    // https://mvnrepository.com/artifact/org.apache.activemq/activemq-spring
+    compile group: 'org.apache.activemq', name: 'activemq-spring', version: '5.15.9'
+
+    // https://mvnrepository.com/artifact/org.apache.camel/camel-core
+    compile group: 'org.apache.camel', name: 'camel-core', version: camelVersion
+    // https://mvnrepository.com/artifact/org.apache.camel/camel-spring-boot-starter
+    compile group: 'org.apache.camel', name: 'camel-spring-boot-starter', version: camelVersion
+    // https://mvnrepository.com/artifact/org.apache.camel/camel-spring
+    compile group: 'org.apache.camel', name: 'camel-spring', version: camelVersion
+    // https://mvnrepository.com/artifact/org.apache.camel/camel-xmljson
+    compile group: 'org.apache.camel', name: 'camel-xmljson', version: '2.23.4'
+    // https://mvnrepository.com/artifact/org.apache.camel/camel-saxon
+    compile group: 'org.apache.camel', name: 'camel-saxon', version: camelVersion
+    // https://mvnrepository.com/artifact/org.apache.camel/camel-jsonpath
+    compile group: 'org.apache.camel', name: 'camel-jsonpath', version: camelVersion
+
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.18.2'
+
+    //compile 'org.springframework.data:spring-data-commons'
+}
