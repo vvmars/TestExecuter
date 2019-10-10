@@ -1,2 +1,3 @@
 rootProject.name = 'testExecutor'
 
+include 'library'
