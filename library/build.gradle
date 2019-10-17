@@ -1,0 +1,13 @@
+plugins {
+    id 'application'
+}
+
+version '1.0'
+
+dependencies {
+
+}
+
+mainClassName = 'com.Application'
+
+jar.archiveFileName = "${project.name}.jar"

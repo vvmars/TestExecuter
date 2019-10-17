@@ -1,0 +1,18 @@
+plugins {
+    id 'application'
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/com.carrotsearch.randomizedtesting/randomizedtesting-runner
+    compile group: 'com.carrotsearch.randomizedtesting', name: 'randomizedtesting-runner', version: '2.7.3'
+    // https://mvnrepository.com/artifact/org.elasticsearch.test/framework
+    compile group: 'org.elasticsearch.test', name: 'framework', version: '7.4.0'
+    // https://mvnrepository.com/artifact/org.apache.lucene/lucene-test-framework
+    compile group: 'org.apache.lucene', name: 'lucene-test-framework', version: '8.2.0'
+
+    //compile group: 'mars', name: 'library', version: '1.0'
+    //implementation project('library')
+}
+
+mainClassName = 'com.Application'
+

@@ -1,5 +1,9 @@
 /.gradle/
 /build/
+/elasticSearch/build/
+/cucumber/build/
+/library/build/
+/service/build/
 .idea/
 /bin/
 *.iml

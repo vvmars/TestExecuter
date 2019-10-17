@@ -1,3 +1,4 @@
+
 plugins {
     id 'java'
 }
@@ -5,10 +6,17 @@ plugins {
 group 'mars'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
 
-repositories {
-    mavenCentral()
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+    sourceCompatibility = 1.8
+}
+
+configure(subprojects){
+    apply plugin: 'java'
 }
 
 ext {
@@ -16,6 +24,12 @@ ext {
     activemqVersion = '5.7.0'
     springVersion = '2.1.9.RELEASE'
     //oracleVersion = '11.2.0.1'
+}
+
+project(':elasticSearch') {
+    dependencies {
+        implementation project(':library')
+    }
 }
 
 dependencies {
