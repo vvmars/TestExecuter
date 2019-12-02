@@ -27,7 +27,7 @@ public class SearchTicket {
      * @param ticket the ticket.
      */
     public void add(Ticket ticket) {
-        System.out.printf("adding beer to search index: %s\n", ticket);
+        System.out.printf("adding ticket to search index: %s\n", ticket);
         IndexRequest indexRequest = Requests.indexRequest(INDEX)
                 .id("1")
                 .source("id", ticket.getId(),

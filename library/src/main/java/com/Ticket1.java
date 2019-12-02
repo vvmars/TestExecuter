@@ -3,12 +3,12 @@ package com;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Ticket {
+public class Ticket1 {
     private String id;
     private String film;
     private LocalDate demonstrationDate;
 
-    private Ticket(){};
+    private Ticket1(){};
 
     public String getId() {
         return id;
@@ -30,7 +30,7 @@ public class Ticket {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Ticket ticket = (Ticket) o;
+        Ticket1 ticket = (Ticket1) o;
         return id.equals(ticket.id) &&
                 film.equals(ticket.film) &&
                 demonstrationDate.equals(ticket.demonstrationDate);
@@ -43,26 +43,29 @@ public class Ticket {
 
     // ********* BUILDER ********
     static class TicketBuilder {
-        private Ticket ticket = null;
+        private Ticket1 ticket = null;
 
-        public void setId(String id) {
+        public TicketBuilder setId(String id) {
             this.ticket.id = id;
-        }
-
-        public void setFilm(String film) {
-            this.ticket.film = film;
-        }
-
-        public void setDemonstrationDate(LocalDate demonstrationDate) {
-            this.ticket.demonstrationDate = demonstrationDate;
-        }
-
-        public TicketBuilder builder(){
-            ticket = new Ticket();
             return this;
         }
 
-        public Ticket build(){
+        public TicketBuilder setFilm(String film) {
+            this.ticket.film = film;
+            return this;
+        }
+
+        public TicketBuilder setDemonstrationDate(LocalDate demonstrationDate) {
+            this.ticket.demonstrationDate = demonstrationDate;
+            return this;
+        }
+
+        public TicketBuilder builder(){
+            ticket = new Ticket1();
+            return this;
+        }
+
+        public Ticket1 build(){
             return ticket;
         }
     }

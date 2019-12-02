@@ -1,18 +1,33 @@
 plugins {
+    id 'java'
     id 'application'
+}
+
+apply plugin: 'application'
+
+jar {
+    manifest {
+        attributes ('Class-Path': '/libs/elasticSearch.jar')
+        attributes('Main-Class': 'com.Application.class')
+    }
 }
 
 dependencies {
     // https://mvnrepository.com/artifact/com.carrotsearch.randomizedtesting/randomizedtesting-runner
-    compile group: 'com.carrotsearch.randomizedtesting', name: 'randomizedtesting-runner', version: '2.7.3'
+    //compile group: 'com.carrotsearch.randomizedtesting', name: 'randomizedtesting-runner', version: '2.7.3'
     // https://mvnrepository.com/artifact/org.elasticsearch.test/framework
     compile group: 'org.elasticsearch.test', name: 'framework', version: '7.4.0'
     // https://mvnrepository.com/artifact/org.apache.lucene/lucene-test-framework
-    compile group: 'org.apache.lucene', name: 'lucene-test-framework', version: '8.2.0'
+    //compile group: 'org.apache.lucene', name: 'lucene-test-framework', version: '8.2.0'
 
+    // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.12.1'
     //compile group: 'mars', name: 'library', version: '1.0'
     //implementation project('library')
+    //compile project(path: ':library', configuration: 'shadow')
 }
 
 mainClassName = 'com.Application'
+
+
 

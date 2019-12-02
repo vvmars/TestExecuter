@@ -1,13 +1,44 @@
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:5.1.0'
+    }
+}
+
 plugins {
-    id 'application'
+    id 'java-library'
+    id 'com.github.johnrengelman.shadow' version '5.1.0'
 }
 
 version '1.0'
 
 dependencies {
+    // https://mvnrepository.com/artifact/com.carrotsearch.randomizedtesting/randomizedtesting-runner
+    api group: 'com.carrotsearch.randomizedtesting', name: 'randomizedtesting-runner', version: '2.7.3'
+    // https://mvnrepository.com/artifact/org.elasticsearch.test/framework
+    //api group: 'org.elasticsearch.test', name: 'framework', version: '7.4.0'
+    // https://mvnrepository.com/artifact/org.apache.lucene/lucene-test-framework
+    //implementation group: 'org.apache.lucene', name: 'lucene-test-framework', version: '8.2.0'
 
+    // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
+    //compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.12.1'
+
+    //compile group: 'mars', name: 'library', version: '1.0'
+    //implementation project('library')
 }
 
-mainClassName = 'com.Application'
-
 jar.archiveFileName = "${project.name}.jar"
+
+
+shadowJar {
+    //relocate 'org.apache.logging', 'hidden.org.apache.logging'
+    relocate 'com.carrotsearch.randomizedtesting', 'hidden.com.carrotsearch.randomizedtesting'
+    //relocate 'org.apache.lucene', 'hidden.org.apache.lucene'
+    relocate 'junit', 'hidden.junit'
+    relocate 'org.junit', 'hidden.org.junit'
+    relocate 'org', 'hidden.org'
+}
