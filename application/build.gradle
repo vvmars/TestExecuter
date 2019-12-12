@@ -1,5 +1,5 @@
 plugins {
-    id 'java'
+    id 'application'
 }
 
 
@@ -61,4 +61,8 @@ dependencies {
     compile group: 'org.projectlombok', name: 'lombok', version: '1.18.2'
 
     //compile 'org.springframework.data:spring-data-commons'
+}
+
+application {
+    mainClassName = 'com.Application'
 }

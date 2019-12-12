@@ -26,13 +26,21 @@ ext {
     //oracleVersion = '11.2.0.1'
 }
 
-project(':elasticSearch') {
+/*project(':elasticSearch') {
     dependencies {
         implementation project(path: ':library', configuration: 'shadow')
         //implementation project(':library')
     }
+}*/
+
+project(':application') {
+    dependencies {
+        implementation project(path: ':services:jms')
+    }
 }
 
 dependencies {
-
+    implementation project(':application')
 }
+
+
