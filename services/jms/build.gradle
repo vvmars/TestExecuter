@@ -1,12 +1,12 @@
 plugins {
-    id 'application'
+    id 'java'
 }
 
 
 ext {
     camelVersion = "2.24.2"
     activemqVersion = '5.7.0'
-    springVersion = '2.2.2.RELEASE'
+    springVersion = '2.1.9.RELEASE'
     //oracleVersion = '11.2.0.1'
 }
 
@@ -27,10 +27,6 @@ dependencies {
 
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot
     compile group: 'org.springframework.boot', name: 'spring-boot', version: springVersion
-    //For REST
-    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web-services
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web-services', version: springVersion
-
     // https://mvnrepository.com/artifact/org.springframework/spring-core
     compile group: 'org.springframework', name: 'spring-core', version: springVersion
     // https://mvnrepository.com/artifact/org.springframework/spring-context
@@ -65,10 +61,4 @@ dependencies {
     compile group: 'org.projectlombok', name: 'lombok', version: '1.18.2'
 
     //compile 'org.springframework.data:spring-data-commons'
-
-    //compile group: 'mars', name: 'services.jms', version: '1'
-}
-
-application {
-    mainClassName = 'com.Application'
 }

@@ -1,0 +1,54 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: amq
+  namespace: testexecutor
+  selfLink: /api/v1/namespaces/testexecutor/services/amq
+  uid: 2bdebaf2-1d26-11ea-b45f-060b8c12d11f
+  resourceVersion: '123278620'
+  creationTimestamp: '2019-12-12T21:27:17Z'
+  labels:
+    app: amq
+    app.kubernetes.io/component: amq
+    app.kubernetes.io/instance: amq
+    app.kubernetes.io/part-of: amq-app
+  annotations:
+    openshift.io/generated-by: OpenShiftWebConsole
+spec:
+  ports:
+    - name: 1883-tcp
+      protocol: TCP
+      port: 1883
+      targetPort: 1883
+    - name: 5672-tcp
+      protocol: TCP
+      port: 5672
+      targetPort: 5672
+    - name: stomp-port
+      protocol: TCP
+      port: 61613
+      targetPort: 61613
+    - name: 61614-tcp
+      protocol: TCP
+      port: 61614
+      targetPort: 61614
+    - name: amq-port
+      protocol: TCP
+      port: 61616
+      targetPort: 61616
+    - name: admin-port
+      protocol: TCP
+      port: 8161
+      targetPort: 8161
+    - name: jolokia
+      protocol: TCP
+      port: 8778
+      targetPort: 8778
+  selector:
+    app: amq
+    deploymentconfig: amq
+  clusterIP: 172.30.102.87
+  type: ClusterIP
+  sessionAffinity: None
+status:
+  loadBalancer: {}

@@ -1,0 +1,37 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: amq
+  namespace: testexecutor
+  selfLink: /apis/route.openshift.io/v1/namespaces/testexecutor/routes/amq
+  uid: 2be18de3-1d26-11ea-8bfe-0a580a8101c4
+  resourceVersion: '123279036'
+  creationTimestamp: '2019-12-12T21:27:17Z'
+  labels:
+    app: amq
+    app.kubernetes.io/component: amq
+    app.kubernetes.io/instance: amq
+    app.kubernetes.io/part-of: amq-app
+  annotations:
+    openshift.io/generated-by: OpenShiftWebConsole
+    openshift.io/host.generated: 'true'
+spec:
+  host: amq-testexecutor.apps.us-west-1.starter.openshift-online.com
+  subdomain: ''
+  to:
+    kind: Service
+    name: amq
+    weight: 100
+  port:
+    targetPort: admin-port
+  wildcardPolicy: None
+status:
+  ingress:
+    - host: amq-testexecutor.apps.us-west-1.starter.openshift-online.com
+      routerName: default
+      conditions:
+        - type: Admitted
+          status: 'True'
+          lastTransitionTime: '2019-12-12T21:27:17Z'
+      wildcardPolicy: None
+      routerCanonicalHostname: apps.us-west-1.starter.openshift-online.com

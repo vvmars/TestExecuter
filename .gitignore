@@ -3,7 +3,8 @@
 /elasticSearch/build/
 /cucumber/build/
 /library/build/
-/services/build/
+/services/jms/build/
+/application/build/
 .idea/
 /bin/
 *.iml

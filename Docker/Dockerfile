@@ -24,8 +24,8 @@ RUN tar xzf $ACTIVEMQ-bin.tar.gz -C  /opt && \
     addgroup -S activemq && adduser -S -H -G activemq -h $ACTIVEMQ_HOME activemq && \
     chown -R activemq:root /opt/$ACTIVEMQ && \
     chown -h activemq:root $ACTIVEMQ_HOME && \
-	chmod -R g+w /opt/$ACTIVEMQ
-	chmod -R g+w $ACTIVEMQ_HOME
+	chmod -R g+w /opt/$ACTIVEMQ && \
+	chmod -R g+w $ACTIVEMQ_HOME && \
     apk del build-dependencies && \
     rm -rf /var/cache/apk/*
 
